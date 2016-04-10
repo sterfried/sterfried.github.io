@@ -15,6 +15,7 @@ $(document).ready(function(){
 			dataType: "jsonp",
 			jsonp: "",
 			username: "f088e717-7a69-4372-9401-1d112062f722",
+			contentType: "application/json",
 			success: function(data) {
 				console.log(data)
 			}
@@ -27,6 +28,7 @@ $(document).ready(function(){
 			method: "POST",
 			url: "https://api.orchestrate.io/v0/items",
 			dataType: "jsonp",
+			contentType: "application/json",
 			jsonp: "",
 			data: {
 				"name": value
