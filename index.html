@@ -25,7 +25,8 @@ $(document).ready(function(){
 			crossOrigin: true,
 			method: "POST",
 			url: "https://api.orchestrate.io/v0/items",
-			dataType: "json",
+			dataType: "jsonp",
+			jsonp: "",
 			data: {
 				"name": value
 			},
