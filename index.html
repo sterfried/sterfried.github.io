@@ -7,17 +7,34 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-$("#get-btn").on("click", function(){
-$.ajax({
-    crossOrigin: true,
-	method: "HEAD",
-	url: "https://api.orchestrate.io/v0/items",
-	dataType: "jsonp",
-	username: "f088e717-7a69-4372-9401-1d112062f722",
-	success: function(data) {
-		console.log(data)
-	}
-});});
+	$("#get-btn").on("click", function(){
+		$.ajax({
+			crossOrigin: true,
+			method: "HEAD",
+			url: "https://api.orchestrate.io/v0/items",
+			dataType: "json",
+			username: "f088e717-7a69-4372-9401-1d112062f722",
+			success: function(data) {
+				console.log(data)
+			}
+		});
+	});
+	$("#set-btn").on("click", function(){
+		var value = prompt("value?");
+		$.ajax({
+			crossOrigin: true,
+			method: "POST",
+			url: "https://api.orchestrate.io/v0/items",
+			dataType: "json",
+			data: {
+				"name": value
+			},
+			username: "f088e717-7a69-4372-9401-1d112062f722",
+			success: function(data) {
+				console.log(data)
+			}
+		});
+	});
 });
 </script>
 </head>
@@ -27,7 +44,7 @@ $.ajax({
 <button type="button" id="get-btn" class="btn btn-default btn-block">Get</button>
 </div>
 <div class="col-xs-6">
-<button type="button" id="set-btn" class="btn btn-warning">Set</button>
+<button type="button" id="set-btn" class="btn btn-warning btn-block">Set</button>
 </div>
 </div>
 </body>
