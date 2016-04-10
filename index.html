@@ -11,9 +11,8 @@ $(document).ready(function(){
 		$.ajax({
 			crossOrigin: true,
 			method: "HEAD",
-			url: "https://api.orchestrate.io/v0/items",
-			dataType: "jsonp",
-			jsonp: "",
+			url: "https://api.orchestrate.io/v0/items?jquery=123",
+			dataType: "json",
 			username: "f088e717-7a69-4372-9401-1d112062f722",
 			contentType: "application/json",
 			processData : false,
