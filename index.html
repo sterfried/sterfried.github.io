@@ -10,21 +10,13 @@ $(document).ready(function(){
 $("#get-btn").on("click", function(){
 $.ajax({
     crossOrigin: true,
-	method: "PUT",
+	method: "HEAD",
 	url: "https://api.orchestrate.io/v0/items",
 	dataType: "jsonp",
-	data: {
-		"name" : "sterling",
-		"location": "oakland"
-	},
 	username: "f088e717-7a69-4372-9401-1d112062f722",
 	success: function(data) {
 		console.log(data)
-	},
-	error: function(data) {
-		console.log(data)
 	}
-
 });});
 });
 </script>
